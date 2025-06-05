@@ -1,14 +1,14 @@
 -- Vim default options, from `:h option-list`
-require 'option'
+require 'config.option'
 
 -- Adding keymaps
-require 'keymap'
-
--- Custom configurations based on filetype
-require 'filetype'
+require 'config.keymap'
 
 -- Use plugins
-require 'plugin'
+require 'config.lazy'
 
 -- Use LSPs
 require 'lsp'
+
+-- Custom configurations based on file type
+require 'filetype'
