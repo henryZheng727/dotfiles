@@ -8,8 +8,12 @@ vim.g.maplocalleader= ' '
 -- FILE EXPLORATION
 -------------------
 
-vim.cmd("nnoremap <leader>f :Ex<Enter>")
-vim.cmd("nnoremap <leader>vf :Vex<Enter>")
+-- open filetree in Oil
+vim.cmd("nnoremap <leader>ft :Oil<Enter>")
+-- open vertical split filetree in Oil
+vim.cmd("nnoremap <leader>vft :vert Oil<Enter>")
+-- find files using Telescope
+vim.cmd("nnoremap <leader>ff :Telescope find_files<Enter>")
 
 -------------------
 -- SEARCH REMAPPING
