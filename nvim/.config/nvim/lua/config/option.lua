@@ -107,8 +107,6 @@ vim.cmd("set scrolloff=10")
 vim.cmd("set tabclose=uselast")
 -- enable 24-bit RGB color in the TUI
 vim.cmd("set termguicolors")
--- add color scheme
-vim.cmd("colorscheme wildcharm")
 
 
 -- File Saving Options:
@@ -127,8 +125,6 @@ vim.cmd("set undofile")
 
 
 -- File Navigation Options:
--- change directory to the file in the current window
-vim.cmd("set autochdir")
 -- change directory to the home directory by ":cd"
 vim.cmd("set cdhome")
 -- ignore case when completing file names

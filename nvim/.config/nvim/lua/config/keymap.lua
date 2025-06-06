@@ -13,7 +13,9 @@ vim.cmd("nnoremap <leader>ft :Oil<Enter>")
 -- open vertical split filetree in Oil
 vim.cmd("nnoremap <leader>vft :vert Oil<Enter>")
 -- find files using Telescope
-vim.cmd("nnoremap <leader>ff :Telescope find_files<Enter>")
+vim.cmd("nnoremap <leader>ff :Telescope find_files hidden=true<Enter>")
+-- find files using Telescope Live Grep
+vim.cmd("nnoremap <leader>fg :Telescope live_grep hidden=true<Enter>")
 
 -------------------
 -- SEARCH REMAPPING

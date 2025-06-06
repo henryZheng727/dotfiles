@@ -8,7 +8,6 @@ return {
           -- show hidden files (starting with ".")
           show_hidden = true,
       },
-
   },
 
   -- Optional dependencies
