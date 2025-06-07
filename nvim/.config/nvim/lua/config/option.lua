@@ -2,141 +2,139 @@
 
 -- Line Numbering:
 -- print the line number in front of each line
-vim.cmd("set number")
+vim.o.number = true
 -- show relative line number in front of each line
-vim.cmd("set relativenumber")
+vim.o.relativenumber = true
 
 
 -- Search Options:
 -- ignore case in search patterns
-vim.cmd("set ignorecase")
+vim.o.ignorecase = true
 -- ignore case when pattern has uppercase
-vim.cmd("set smartcase")
+vim.o.smartcase = true
 -- match while typing search pattern
-vim.cmd("set incsearch")
+vim.o.incsearch = true
 -- matches with last search pattern
-vim.cmd("set hlsearch")
+vim.o.hlsearch = true
 -- searches wrap around the end of the file
-vim.cmd("set wrapscan")
+vim.o.wrapscan = true
 
 
 -- Text Editing:
 -- indent for new line from previous line
-vim.cmd("set autoindent")
+vim.o.autoindent = true
 -- use the clipboard as the unnamed register (sync with system)
-vim.cmd("set clipboard=unnamedplus")
+vim.o.clipboard = "unnamedplus"
 -- make 'autoindent' use existing indent structure
-vim.cmd("set copyindent")
+vim.o.copyindent = true
 -- use spaces when <Tab> is inserted; use CTRL-V<TAB> to insert a tab
-vim.cmd("set expandtab")
--- add <> as a matching pair for %
-vim.cmd("set matchpairs+=<:>")
+vim.o.expandtab = true
+-- add (), {}, [], and <> as matching pairs for %
+vim.o.matchpairs = "(:),{:},[:],<:>"
 -- preserve the indent structure when reindenting
-vim.cmd("set preserveindent")
+vim.o.preserveindent = true
 -- number of spaces that <Tab> in file uses
-vim.cmd("set tabstop=4")
+vim.o.tabstop = 4
 -- tilde command "~" behaves like an operator
-vim.cmd("set tildeop")
+vim.o.tildeop = true
 -- number of spaces to use for (auto)indent step
-vim.cmd("set shiftwidth=4")
+vim.o.shiftwidth = 4
 -- use 'shiftwidth' when inserting <Tab>
-vim.cmd("set smarttab")
+vim.o.smarttab = true
 
 
 -- Auto Complete:
 -- options for Insert mode completion
-vim.cmd("set completeopt=fuzzy,menu,menuone,popup,preview")
+vim.o.completeopt = "fuzzy,menu,menuone,popup,preview"
 -- adjust case of match for keyword completion
-vim.cmd("set infercase")
+vim.o.infercase = true
 -- show full tag pattern when completing tag
-vim.cmd("set showfulltag")
+vim.o.showfulltag = true
 
 
 -- Mouse Options:
 -- enable the use of mouse clicks
-vim.cmd("set mouse=a")
+vim.o.mouse = "a"
 -- keyboard focus follows the mouse
-vim.cmd("set mousefocus")
+vim.o.mousefocus = true
 -- hide mouse pointer while typing
-vim.cmd("set mousehide")
+vim.o.mousehide = true
 
 
 -- Line Wrapping:
 -- wrapped line repeats indent
-vim.cmd("set breakindent")
+vim.o.breakindent = true
 -- long lines wrap and continue on the next line
-vim.cmd("set wrap")
+vim.o.wrap = true
 
 
 -- GUI Options:
 -- highlight columns 80 and 120
-vim.cmd("set colorcolumn=80,120")
+vim.o.colorcolumn= "80,120"
 -- highlight the screen line of the cursor
-vim.cmd("set cursorline")
+vim.o.cursorline = true
 -- settings for cursor shape and blinking
-vim.cmd([[
-    set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-        \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-        \,sm:block-blinkwait175-blinkoff150-blinkon175
-]])
+vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50," ..
+                  "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," ..
+                  "sm:block-blinkwait175-blinkoff150-blinkon175"
 -- minimum height of a new help window
-vim.cmd("set helpheight=0")
+vim.o.helpheight = 0
 -- shows the effects of :s with partial off-screen results in a preview
-vim.cmd("set inccommand=split")
+vim.o.inccommand = "split"
 -- tells when last window has status lines
-vim.cmd("set laststatus=2")
+vim.o.laststatus = 2
 -- no message on status line to show current mode
-vim.cmd("set noshowmode")
+vim.o.showmode = false
 -- cursor line and column in the status line
-vim.cmd("set ruler")
+vim.o.ruler = true
 -- show (partial) command somewhere
-vim.cmd("set showcmd")
+vim.o.showcmd = true
 -- where to show (partial) command (last line of the screen)
-vim.cmd("set showcmdloc=last")
+vim.o.showcmdloc = "last"
 -- briefly jump to matching bracket if insert one
-vim.cmd("set showmatch")
+vim.o.showmatch = true
 -- always display the sign column (for git signs)
-vim.cmd("set signcolumn=yes")
+vim.o.signcolumn = "yes"
 -- new window from split is below the current one
-vim.cmd("set splitbelow")
+vim.o.splitbelow = true
 -- window is put right of the current one
-vim.cmd("set splitright")
+vim.o.splitright = true
 -- minimum number of lines above and below cursor
-vim.cmd("set scrolloff=10")
+vim.o.scrolloff = 10
 -- which tab page to focus when closing a tab
-vim.cmd("set tabclose=uselast")
+vim.o.tabclose = "uselast"
 -- enable 24-bit RGB color in the TUI
-vim.cmd("set termguicolors")
+vim.o.termguicolors = true
 
 
 -- File Saving Options:
 -- automatically read file when changed outside of Vim
-vim.cmd("set autoread")
+vim.o.autoread = true
 -- automatically write file if changed
-vim.cmd("set autowrite")
+vim.o.autowrite = true
 -- like 'autowrite', but works with more commands
-vim.cmd("set autowriteall")
+vim.o.autowriteall = true
 -- ask what to do about unsaved/read-only files
-vim.cmd("set confirm")
+vim.o.confirm = true
 -- whether to use a swapfile for a buffer
-vim.cmd("set swapfile")
+vim.o.swapfile = true
 -- save undo information in a file
-vim.cmd("set undofile")
+vim.o.undofile = true
 
 
 -- File Navigation Options:
 -- change directory to the home directory by ":cd"
-vim.cmd("set cdhome")
+vim.o.cdhome = true
 -- ignore case when completing file names
-vim.cmd("set wildignorecase")
+vim.o.wildignorecase = true
 -- specifies how command line completion is done
-vim.cmd("set wildoptions=pum,tagfile,fuzzy")
+vim.o.wildoptions = "pum,tagfile,fuzzy"
 
 
 -- Spell Checking Options:
 -- enable spell checking
-vim.cmd("set spell") 
+vim.o.spell = true 
 -- language(s) to do spell checking for
-vim.cmd("set spelllang=en_us")
+vim.o.spelllang = "en_us"
 -- options for spell checking
-vim.cmd("set spelloptions=camel")
+vim.o.spelloptions = "camel"

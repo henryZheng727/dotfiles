@@ -9,40 +9,51 @@ vim.g.maplocalleader= ' '
 -------------------
 
 -- open filetree in Oil
-vim.cmd("nnoremap <leader>ft :Oil<Enter>")
+vim.keymap.set('n', '<leader>ft', '<cmd>Oil<Enter>')
 -- open vertical split filetree in Oil
-vim.cmd("nnoremap <leader>vft :vert Oil<Enter>")
+vim.keymap.set('n', '<leader>vft', '<cmd>vert Oil<Enter>')
 -- find files using Telescope
-vim.cmd("nnoremap <leader>ff :Telescope find_files hidden=true<Enter>")
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<Enter>')
 -- find files using Telescope Live Grep
-vim.cmd("nnoremap <leader>fg :Telescope live_grep hidden=true<Enter>")
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<Enter>')
 
 -------------------
 -- SEARCH REMAPPING
 -------------------
 
 -- center when searching for text
-vim.cmd("nnoremap n nzz")
-vim.cmd("nnoremap N Nzz")
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
 
 ------------------------
 -- REMAP WINDOW CONTROLS
 ------------------------
 
 -- " wh" to move to the left window
-vim.cmd("nnoremap <leader>wh <C-w><C-h>")
+vim.keymap.set('n', '<leader>wh', '<C-w><C-h>')
 -- " wl" to move to the right window
-vim.cmd("nnoremap <leader>wl <C-w><C-l>")
+vim.keymap.set('n', '<leader>wl', '<C-w><C-l>')
 -- " wj" to move to the bottom window
-vim.cmd("nnoremap <leader>wj <C-w><C-j>")
+vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 -- " wk" to move to the top window
-vim.cmd("nnoremap <leader>wk <C-w><C-k>")
+vim.keymap.set('n', '<leader>wk', '<C-w><C-k>')
 
 -- " wH" to snap the window to the left
-vim.cmd("nnoremap <leader>wH <C-w><C-H>")
+vim.keymap.set('n', '<leader>wH', '<C-w><C-H>')
 -- " wL" to snap the window to the left
-vim.cmd("nnoremap <leader>wL <C-w><C-L>")
+vim.keymap.set('n', '<leader>wL', '<C-w><C-L>')
 -- " wJ" to snap the window to the left
-vim.cmd("nnoremap <leader>wJ <C-w><C-J>")
+vim.keymap.set('n', '<leader>wJ', '<C-w><C-J>')
 -- " wK" to snap the window to the left
-vim.cmd("nnoremap <leader>wK <C-w><C-K>")
+vim.keymap.set('n', '<leader>wK', '<C-w><C-K>')
+
+---------------------------
+-- READ DIAGNOSTIC MESSAGES
+---------------------------
+
+-- " ve" to view error
+vim.keymap.set('n', '<leader>ve', vim.diagnostic.open_float)
+-- " vne" to view next error
+vim.keymap.set('n', '<leader>vne', vim.diagnostic.goto_next)
+-- " vNe" to view previous error
+vim.keymap.set('n', '<leader>vNe', vim.diagnostic.goto_prev)
