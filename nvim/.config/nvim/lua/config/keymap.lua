@@ -8,13 +8,13 @@ vim.g.maplocalleader= ' '
 -- FILE EXPLORATION
 -------------------
 
--- open filetree in Oil
+-- " ft" to open filetree in Oil
 vim.keymap.set('n', '<leader>ft', '<cmd>Oil<Enter>')
--- open vertical split filetree in Oil
+-- " vft" to open filetree in vertical split in Oil
 vim.keymap.set('n', '<leader>vft', '<cmd>vert Oil<Enter>')
--- find files using Telescope
+-- " ff" to find files using Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<Enter>')
--- find files using Telescope Live Grep
+-- " fg" (find grep) find files using Telescope Live Grep
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<Enter>')
 
 -------------------
@@ -47,13 +47,15 @@ vim.keymap.set('n', '<leader>wJ', '<C-w><C-J>')
 -- " wK" to snap the window to the left
 vim.keymap.set('n', '<leader>wK', '<C-w><C-K>')
 
----------------------------
--- READ DIAGNOSTIC MESSAGES
----------------------------
+-----------------
+-- ERROR MESSAGES
+-----------------
 
--- " ve" to view error
-vim.keymap.set('n', '<leader>ve', vim.diagnostic.open_float)
--- " vne" to view next error
-vim.keymap.set('n', '<leader>vne', vim.diagnostic.goto_next)
--- " vNe" to view previous error
-vim.keymap.set('n', '<leader>vNe', vim.diagnostic.goto_prev)
+-- " ev" for error view (show the error on the current line)
+vim.keymap.set('n', '<leader>ev', vim.diagnostic.open_float)
+-- " en" to view next error
+vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next)
+-- " eN" to view previous error
+vim.keymap.set('n', '<leader>eN', vim.diagnostic.goto_prev)
+-- " ef" for error fixes (show error quick fix list on current line)
+vim.keymap.set('n', '<leader>ef', vim.diagnostic.setloclist)

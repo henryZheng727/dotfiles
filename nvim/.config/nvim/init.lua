@@ -7,6 +7,3 @@ require 'config.keymap'
 -- Use plugins
 require 'config.lazy'
 vim.cmd.colorscheme "catppuccin-mocha"
-
--- Custom configurations based on file type
-require 'filetype'
