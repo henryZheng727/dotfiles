@@ -155,8 +155,8 @@ let mapleader=' '
 let maplocalleader=' '
 
 " File Exploration
-nnoremap <leader>f :Ex<Enter>
-nnoremap <leader>vf :Vex<Enter>
+nnoremap <leader>ft :Ex<Enter>
+nnoremap <leader>vft :Vex<Enter>
 
 " Text Centering
 " center when searching for text
