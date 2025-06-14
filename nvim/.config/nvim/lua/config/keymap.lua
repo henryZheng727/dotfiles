@@ -39,13 +39,13 @@ vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wk', '<C-w><C-k>')
 
 -- " wH" to snap the window to the left
-vim.keymap.set('n', '<leader>wH', '<C-w><C-H>')
+vim.keymap.set('n', '<leader>wH', '<C-w>H')
 -- " wL" to snap the window to the left
-vim.keymap.set('n', '<leader>wL', '<C-w><C-L>')
+vim.keymap.set('n', '<leader>wL', '<C-w>L')
 -- " wJ" to snap the window to the left
-vim.keymap.set('n', '<leader>wJ', '<C-w><C-J>')
+vim.keymap.set('n', '<leader>wJ', '<C-w>J')
 -- " wK" to snap the window to the left
-vim.keymap.set('n', '<leader>wK', '<C-w><C-K>')
+vim.keymap.set('n', '<leader>wK', '<C-w>K')
 
 -----------------
 -- ERROR MESSAGES
@@ -57,5 +57,5 @@ vim.keymap.set('n', '<leader>ev', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next)
 -- " eN" to view previous error
 vim.keymap.set('n', '<leader>eN', vim.diagnostic.goto_prev)
--- " ef" for error fixes (show error quick fix list on current line)
-vim.keymap.set('n', '<leader>ef', vim.diagnostic.setloclist)
+-- " eq" for error quickfix list
+vim.keymap.set('n', '<leader>eq', vim.diagnostic.setloclist)
