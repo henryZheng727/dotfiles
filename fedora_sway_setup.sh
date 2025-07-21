@@ -13,12 +13,9 @@ echo "color=always" | sudo tee -a /etc/dnf/dnf.conf
 sudo dnf install tlp
 # TODO - make it run on startup
 
-# remove unnecessary apps
-sudo dnf remove firefox
-
 # download and install dotfiles for all major non-flatpak apps
 # TODO - set up zsh and maybe starship?
-sudo dnf install git stow fastfetch neovim steam ranger kitty
+sudo dnf install git stow fastfetch neovim steam ranger kitty pandoc
 cd ~
 mkdir software
 cd software
@@ -50,3 +47,6 @@ flatpak install flathub \
     org.libreoffice.LibreOffice \
     org.videolan.VLC \
     us.zoom.Zoom
+
+# remove unnecessary apps
+sudo dnf remove firefox foot
