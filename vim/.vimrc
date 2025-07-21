@@ -72,6 +72,8 @@ set wrap
 
 
 " GUI Options:
+" ensures dark mode
+set background=dark
 " highlight columns 80 and 120
 set colorcolumn=80,120
 " highlight the screen line of the cursor
@@ -107,7 +109,7 @@ set tabclose=uselast
 " enable 24-bit RGB color in the TUI
 set termguicolors
 " add color scheme
-colorscheme elflord
+colorscheme wildcharm
 
 
 " File Saving Options:
@@ -181,3 +183,7 @@ nnoremap <leader>wL <C-w><C-L>
 nnoremap <leader>wJ <C-w><C-J>
 " ' wK' to snap the window to the left
 nnoremap <leader>wK <C-w><C-K>
+
+" Escape Remap
+" 'CTRL-[' to escape. Works best when CTRL is remapped to Caps Lock
+nnoremap <C-[> <Esc>

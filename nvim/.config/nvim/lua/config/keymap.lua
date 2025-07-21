@@ -59,3 +59,10 @@ vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>eN', vim.diagnostic.goto_prev)
 -- " eq" for error quickfix list
 vim.keymap.set('n', '<leader>eq', vim.diagnostic.setloclist)
+
+---------------------
+-- BETTER INSERT MODE
+---------------------
+
+-- CTRL-[ to exit insert mode
+vim.keymap.set('i', 'CTRL-[', '<Esc>')
