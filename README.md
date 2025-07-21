@@ -3,6 +3,11 @@ This repository stores my configuration files for Unix-like systems.
 
 # Installation and Usage
 
+*If you are installing from a fresh copy of Fedora Sway*:
+```sh
+curl -fsSL "https://raw.githubusercontent.com/henryZheng727/dotfiles/refs/heads/main/fedora_sway_setup.sh" | sh
+```
+
 The best way to manage these files is with [GNU Stow](https://www.gnu.org/software/stow/).
 **Install GNU Stow using your system's package manager of choice.**
 My file organization mimics that found in [this video](https://youtu.be/y6XCebnB9gs).
