@@ -10,12 +10,18 @@ vim.g.maplocalleader= ' '
 
 -- " ft" to open filetree in Oil
 vim.keymap.set('n', '<leader>ft', '<cmd>Oil<Enter>')
+-- "-" to open filetree in Oil
+vim.keymap.set('n', '-', '<cmd>Oil<Enter>')
 -- " vft" to open filetree in vertical split in Oil
 vim.keymap.set('n', '<leader>vft', '<cmd>vert Oil<Enter>')
 -- " ff" to find files using Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<Enter>')
 -- " fg" (find grep) find files using Telescope Live Grep
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<Enter>')
+-- " bn" to open the next buffer
+vim.keymap.set('n', '<leader>bn', '<cmd>bnext<Enter>')
+-- " bp" to open the previous buffer
+vim.keymap.set('n', '<leader>bp', '<cmd>bprevious<Enter>')
 
 -------------------
 -- SEARCH REMAPPING
