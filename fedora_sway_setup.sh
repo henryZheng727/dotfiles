@@ -6,12 +6,13 @@
 # or are on another system
 
 # make DNF less mid
-echo "# see \`man dnf.conf\` for defaults/options" | sudo tee /etc/dnf/dnf.conf
-echo "[main]" | sudo tee -a /etc/dnf/dnf.conf
-echo "defaultyes=true" | sudo tee -a /etc/dnf/dnf.conf
-echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
-echo "color=always" | sudo tee -a /etc/dnf/dnf.conf
-sudo dnf update
+printf "\
+# see \`man dnf.conf\` for defaults/options\n\
+[main]\n\
+defaultyes=true\n\
+max_parallel_downloads=10\n\
+color=always\n\
+" | sudo tee /etc/dnf/dnf.conf || exit
 echo "Fixed DNF!"
 
 # make your battery not suck
@@ -21,13 +22,13 @@ echo "Enabled TLP!"
 
 # download and install dotfiles for all major non-flatpak apps
 # TODO - set up zsh and maybe starship?
-sudo dnf install git stow fastfetch neovim ranger kitty pandoc
+sudo dnf install git stow fastfetch neovim ranger kitty pandoc -y || exit
 cd ~ || exit
 mkdir software
 cd software || exit
 git clone https://github.com/henryzheng727/dotfiles.git || exit
 cd dotfiles || exit
-stow -t ~ neovim kitty || exit
+stow -t ~ nvim kitty || exit
 echo "Stowed dotfiles and installed terminal apps!"
 
 # download flatpaks that i use
