@@ -41,7 +41,7 @@ chsh -s "$(which zsh)" || exit
 stow -t ~ kitty zsh || exit
 
 # download major terminal apps
-sudo dnf install neovim ranger pandoc -y || exit
+sudo dnf install neovim ranger pandoc gh -y || exit
 
 # install dotfiles for rofi, sway
 stow -t ~ sway rofi || exit
@@ -52,25 +52,16 @@ flatpak remote-add --if-not-exists flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub \
     app.zen_browser.zen \
-#     com.calibre_ebook.calibre \
-#     com.github.jeromerobert.pdfarranger \
-#     com.github.tchx84.Flatseal \
-#     com.google.Chrome \
-#     com.obsproject.Studio \
-#     com.spotify.Client \
-#     com.vscodium.codium \
-#     dev.vencord.Vesktop \
-#     fr.handbrake.ghb \
-#     md.obsidian.Obsidian \
-#     org.audacityteam.Audacity \
-#     org.gimp.GIMP \
-#     org.kde.kdenlive \
-#     org.kde.krita \
-#     org.libreoffice.LibreOffice \
-#     org.videolan.VLC \
-#     us.zoom.Zoom \
-#     com.valvesoftware.Steam || exit
-# echo "Installed important Flatpak apps!"
+    com.calibre_ebook.calibre \
+    com.github.tchx84.Flatseal \
+    com.google.Chrome \
+    com.spotify.Client \
+    com.vscodium.codium \
+    dev.vencord.Vesktop \
+    md.obsidian.Obsidian \
+    org.libreoffice.LibreOffice \
+    com.valvesoftware.Steam || exit
+echo "Installed important Flatpak apps!"
 
 # todo - find some way to backup and restore ~
 # pika backup or borg may be useful. borg with rsync would be nice
