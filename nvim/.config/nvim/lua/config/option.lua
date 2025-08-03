@@ -105,6 +105,11 @@ vim.o.scrolloff = 10
 vim.o.tabclose = "uselast"
 -- enable 24-bit RGB color in the TUI
 vim.o.termguicolors = true
+-- transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 
 
 -- File Saving Options:
