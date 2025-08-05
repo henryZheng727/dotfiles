@@ -43,8 +43,14 @@ stow -t ~ kitty zsh || exit
 # download major terminal apps
 sudo dnf install neovim ranger pandoc gh -y || exit
 
-# install dotfiles for rofi, sway
+# install necessary apps & dotfiles for rofi, sway
+# todo
 stow -t ~ sway rofi || exit
+
+# upgrade ffmpeg so video playback actually works
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
 # download flatpaks that i use
 sudo dnf install flatpak || exit
@@ -68,6 +74,3 @@ echo "Installed important Flatpak apps!"
 
 # remove unnecessary apps
 sudo dnf remove firefox foot
-
-# launch a new terminal
-kitty

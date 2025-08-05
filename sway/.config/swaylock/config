@@ -1,0 +1,8 @@
+image="$XDG_CONFIG_HOME/swaythemes/wallhaven-4dg3l4_1920x1080.png"
+ignore-empty-password
+show-failed-attempts
+show-keyboard-layout
+hide-keyboard-layout
+indicator-caps-lock
+indicator-idle-visible
+
