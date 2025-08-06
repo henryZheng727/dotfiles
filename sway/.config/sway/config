@@ -21,9 +21,9 @@ gaps inner 10
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f'
 
 ### Input configuration
 # Set caps to control
@@ -48,6 +48,7 @@ bindsym $mod+Return exec $term # Start a terminal
 bindsym $mod+q kill # Kill focused window
 bindsym $mod+d exec rofi -show drun # Start your launcher
 bindsym $mod+s exec flatpak run com.google.Chrome --incognito # open search
+bindsym $mod+Space exec rofi -show modes
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -57,7 +58,7 @@ bindsym $mod+s exec flatpak run com.google.Chrome --incognito # open search
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload # Reload the configuration file
-bindsym $mod+e exec rofi -show exit # Exit sway
+bindsym $mod+e exec rofi -show power # Exit sway
 
 # Moving around:
 bindsym $mod+$left focus left

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [ -n "$1" ]; then
     killall rofi;
@@ -6,11 +6,16 @@ if [ -n "$1" ]; then
     exit;
 fi
 
-BUILTIN=(window drun run ssh keys filebrowser recursivebrowser)
-for MODE in BUILTIN; do
-    echo $MODE
-done
+# builtin modes
+echo window
+echo drun
+echo run
+echo ssh
+echo keys
+echo filebrowser
+echo recursivebrowser
 
-for CUSTOM_MODE in $XDG_CONFIG_HOME/rofi/scripts/*; do
-    echo $(basename $CUSTOM_MODE .sh)
+# custom modes
+for CUSTOM_MODE in ~/.config/rofi/scripts/*.sh; do
+    echo $(basename $CUSTOM_MODE ".sh")
 done
