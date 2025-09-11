@@ -30,6 +30,8 @@ vim.keymap.set('n', '<leader>bp', '<cmd>bprevious<Enter>')
 -- center when searching for text
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
+-- " /" for Telescope search
+vim.keymap.set('n', '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<Enter>')
 
 ------------------------
 -- REMAP WINDOW CONTROLS

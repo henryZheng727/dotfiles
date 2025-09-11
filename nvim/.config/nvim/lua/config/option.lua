@@ -64,8 +64,8 @@ vim.o.mousehide = true
 -- Line Wrapping:
 -- wrapped line repeats indent
 vim.o.breakindent = true
--- long lines wrap and continue on the next line
-vim.o.wrap = true
+-- long lines do not wrap and continue on the next line
+vim.o.wrap = false
 
 
 -- GUI Options:

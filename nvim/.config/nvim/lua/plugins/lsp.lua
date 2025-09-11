@@ -16,7 +16,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
-                "bashls",
+                -- "bashls",
                 "clangd", -- c and c++
                 "jdtls", -- java
                 "ltex_plus", -- latex, markdown, plain text

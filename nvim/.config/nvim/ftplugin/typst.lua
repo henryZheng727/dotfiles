@@ -1,6 +1,8 @@
 -- allow better multi-line editing
+vim.o.wrap = true
 vim.o.linebreak = true
 vim.o.smoothscroll = true
+vim.o.relativenumber = false
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '$', 'g$')

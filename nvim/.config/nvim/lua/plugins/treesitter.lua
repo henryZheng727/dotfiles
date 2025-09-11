@@ -18,7 +18,7 @@ return {
             'java',
             'javadoc',
             'javascript',
-            'latex',
+            -- 'latex',
             'lua',
             'luadoc',
             'make',
