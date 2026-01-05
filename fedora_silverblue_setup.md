@@ -3,7 +3,7 @@ Fedora Silverblue is my current daily driver. I wrote this guide mostly to remin
 # Initial Setup
 First, install necessary layered software and *only* necessary layered software. I recommend the three listed below. Layering software will make your system slower and more unstable compared to stock Silverblue, so I would recommend making a list of all your necessary software ahead of time to keep it as slim as possible.
 ```sh
-rpm-ostree install distrobox kitty gnome-tweaks && systemctl reboot
+rpm-ostree install distrobox gnome-tweaks kitty && systemctl reboot
 ```
 I recommend Distrobox because it remedies the issue of bad command-line tooling essentially flawlessly. If you don't use the Kitty terminal emulator, feel free to skip out on installing it. There is a Wezterm Flatpak available, if you use that, although the creator doesn't like it. I prefer to have the terminal emulator tightly integrated with the host system, which is why I felt it was necessary to layer Kitty. GNOME Tweaks is only installed for more keybind remappings that aren't possible in default GNOME settings.
 
@@ -44,7 +44,7 @@ Under the **Displays** category, I set Scale to 125% (because I'm on a laptop) a
 
 Under the **Multitasking** category, I disable Hot Corner, and switch to Fixed Number of Workspaces. I use 4 workspaces, because GNOME's keybinds allow you to remap navigations only between the first four.
 
-Under the **Appearance** category, I switch the Accent to Purple, and pick whatever Background image I like at the time.
+Under the **Appearance** category, I switch the Accent to Purple, and pick whatever background image I like at the time.
 
 Under the **Apps** category, I set my Default Apps. I set my default Web Browser to be Zen Browser and the default Music/Video apps to be VLC media player.
 
@@ -78,16 +78,17 @@ If you've installed the Extension Manager Flatpak, then you can add some useful 
 
 **Caffeine**: `caffeine@patapon.info`. This will place a "Caffeine" option in your upper-left clickable panel, which will prevent your computer from going to sleep naturally. This is nice to avoid having to jiggle your mouse. Unfortunately, it doesn't seem to be able to keep your laptop awake upon closing the lid.
 
-**Just Perfection**: This has a lot of useful UI tweaks. I use very few of them. Under the "Customize" submenu, you can choose to disable animation. I chose to do so, because it felt vaguely unnecessary and sluggish.
+**Just Perfection**: `just-perfection-desktop@just-perfection`. This has a lot of useful UI tweaks. I use very few of them. Under the "Customize" submenu, you can choose to disable animation. I chose to do so, because it felt vaguely unnecessary and sluggish.
 
-**Launch New Instance**: This launches a new instance of an app when you click it, rather than pulling your focus to an existing instance.
+**Launch New Instance**: `launch-new-instance@gnome-shell-extensions.gcampax.github.com`. This launches a new instance of an app when you click it, rather than pulling your focus to an existing instance.
 
-**Space Bar**: This enables an i3-like workspace bar in the upper left of your screen. I keep most of the settings default, but I disabled all the Shortcuts in the menu, as they conflicted heavily with my existing keybinds in Settings, and felt significantly more unreliable than the GNOME Settings rebinds.
+**Space Bar**: `space-bar@luchrioh`. This enables an i3-like workspace bar in the upper left of your screen. I keep most of the settings default, but I disabled all the Shortcuts in the menu, as they conflicted heavily with my existing keybinds in Settings, and felt significantly more unreliable than the GNOME Settings rebinds.
 
 ## Tweaks
 I layered GNOME Tweaks because there is not a Flatpak available for it. I only use it for one thing. In the Keyboard menu, under Additional Layout Options, you can choose to make Caps Lock an additional Ctrl and Shift + Caps Lock the regular Caps Lock.
 
 # Setting Up Distrobox
+## Initial Setup
 This is absolutely critical for working with command line tooling. I recommend using an Arch distrobox, because the instability is relatively inconsequential for containerized terminal applications (when compared to breaking a desktop environment), and the software availability is very high.
 
 Create and enter your Arch distrobox:
@@ -97,12 +98,11 @@ distrobox enter arch
 ```
 
 Your first course of action should be to install the `yay` package manager.
+sudo pacman -S base-devel git && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin
 ```sh
-sudo pacman -S base-devel git # install developer tools
-git clone https://aur.archlinux.org/yay-bin.git # clone and install yay
-cd yay-bin
-makepkg -si
-cd .. && rm -rf yay-bin # remove build artifacts
+sudo pacman -S base-devel git | exit # install developer tools
+git clone https://aur.archlinux.org/yay-bin.git | exit # clone yay
+cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin # install yay
 ```
 
 Your Arch distrobox should now be working, batteries included. I recommend adding the following to your `~/.bashrc` file, to automatically run your distrobox upon opening a terminal:
@@ -110,11 +110,46 @@ Your Arch distrobox should now be working, batteries included. I recommend addin
 # enter distrobox by default
 if command -v distrobox >/dev/null 2>&1
 then
-	distrobox list | grep -w "arch" > /dev/null
-	if [ $? -eq 0 ]; then
-		distrobox enter arch
-	fi
+    distrobox list | grep -w "arch" > /dev/null
+    if [ $? -eq 0 ]; then
+        distrobox enter arch
+    fi
 fi
 ```
 
 This allows you to use your terminal essentially as though you were on an Arch machine without worrying about re-entering the distrobox every time. If you don't like this, a good intermediate would be to create an easy alias for `distrobox enter arch` (I use `dba`). If you ever need to access the host terminal, you can just exit the distrobox with `exit` or CTRL-D like normal, which will put you in the host terminal.
+
+## Development Environment
+These detail steps for getting set up with my ideal development environment.
+
+**TLDR**: Run the following. todo verify this
+```sh
+yay -S starship \
+    neovim \
+    github-cli \
+    fastfetch \
+    pandoc \
+    typst \
+    zellij \
+    ripgrep \
+    btop \
+# todo setup the rest
+```
+
+### Shell
+For my prompt, I use Starship.
+```sh
+yay -S starship | exit
+```
+
+### Neovim
+
+### Git
+I use `gh`, the GitHub CLI, to authenticate with Git. Git should already be installed at this point (in order to use `yay` at all). Install `gh` and authenticate. Note that it is possible that distrobox will not be able to open a web browser on your host system todo
+```sh
+yay -S gh
+gh auth login # todo explain using manually
+```
+
+### Other: Miscellaneous Packages
+I install the following packages for quality-of-life.
