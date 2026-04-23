@@ -1,3 +1,4 @@
+# fuzzily-find documentation with fzf and tldr
 function fdoc
     if not type -q fzf
         echo "Install fzf to use this function."

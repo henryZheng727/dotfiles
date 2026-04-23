@@ -1,3 +1,4 @@
+# make and cd into a directory
 function mcd
     if test (count $argv) -ne 1
         echo "mcd: expected 1 argument, got "(count $argv) >&2

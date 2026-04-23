@@ -1,3 +1,4 @@
+# fuzzily-find and open a file using fd and fzf
 function fop
     if not type -q fzf
         echo "Install fzf to use this function."

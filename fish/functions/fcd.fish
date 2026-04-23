@@ -1,3 +1,4 @@
+# fuzzily-find and cd into a directory using fd and fzf
 function fcd
     if not type -q fzf
         echo "Install fzf to use this function."
